@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/medium"
+    tools:ignore="RtlSymmetry">
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvImage"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardCornerRadius="@dimen/xlarge"
+        card_view:cardElevation="@dimen/xsmall">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                app:srcCompat="@drawable/imgmovie" />
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/titleMovie"
+        style="@style/movieTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_marginTop="@dimen/medium"
+        android:maxEms="8"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cvImage"
+        app:layout_constraintStart_toStartOf="@+id/cvImage"
+        app:layout_constraintTop_toBottomOf="@+id/cvImage"
+        tools:text="@string/movie_title" />
+
+    <ToggleButton
+        android:id="@+id/btnHeart"
+        style="@style/toggleButton"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:background="@drawable/heart_button"
+        android:checked="false"
+        android:contentDescription="@string/heart_icon_description"
+        app:layout_constraintStart_toEndOf="@+id/titleMovie"
+        app:layout_constraintTop_toTopOf="@+id/titleMovie" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
